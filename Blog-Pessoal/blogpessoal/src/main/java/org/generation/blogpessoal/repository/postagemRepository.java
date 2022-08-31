@@ -9,5 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface postagemRepository extends JpaRepository<postagem, Long> {
 
+	//SELECT * FROM tb_postagem WHERE titulo LIKE "%%" ;
 	public List<postagem> findAllByTituloContainingIgnoreCase (String titulo);
+	public List<postagem> findAllByTextoContainingIgnoreCase (String texto);
 }
